@@ -6,17 +6,17 @@ An example of how to use the `react-stateful-context` component.
 
 ## Install
 
-```cli
-// using yarn
+```bash
+# using yarn
 yarn
 
-// using npm
+# using npm
 npm install
 ```
 
 ## Start Example
 
-```cli
+```bash
 npm start
 ```
 
