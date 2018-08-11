@@ -45,14 +45,26 @@ import StatefulContext from 'react-stateful-context'
 
 ### createStatefulContext
 
-By default the default export is a shared context, if you need to create a unique context use `createStatefulContext()`.  This will create a unique Context and Consumer and Provider components.
+By default the default export is a shared context – if you need to create a unique context, use `createStatefulContext()`.
 
 ```js
-{
-  Context,
-  Consumer,
-  Provider
-}
+import { createStatefulContext } from 'react-stateful-context'
+
+const { Context, Consumer, Provider } = createStatefulContext()
+
+<Provider
+  getInitialState={{ text: '' }}
+>
+  <Consumer>
+    {
+      ({ text, setContextState }) =>
+        <div>
+          <p>{text}</p>
+          <button onClick={() => setContextState({ text: text + 'and then. ' })}>Make it longer</button>
+        </div>
+    }
+  </Consumer>
+</Provider>
 ```
 
 ## License
