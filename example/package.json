@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.9.7"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "react": "^16.0.0",
+    "next": "^6.1.1",
+    "react": "^16.4.2",
     "react-dom": "^16.4.2"
   }
 }
