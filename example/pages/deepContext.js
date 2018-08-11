@@ -15,7 +15,7 @@ export default () =>
               <button onClick={() => setContextState({ count: count + 1 })}>Add 1</button>
               <button onClick={() => setContextState({ count: count - 1 })}>Subtract 1</button>
 
-              <StatefulContext.Provider getInitialState={context}>
+              <StatefulContext.Provider getInitialState={() => context}>
                 <StatefulContext.Consumer>
                   {
                     ({ count, setContextState }) => (
