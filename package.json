@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "Stateful component wrapping the React Context API",
   "scripts": {
-    "build": "rollup"
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepublish": "npm run build"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
   "repository": "git@github.com:krambuhl/react-stateful-context.git",
   "author": "Evan Krambuhl <thekrambuhl@gmail.com>",
   "license": "MIT",
@@ -15,10 +20,14 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-jest": "^23.4.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.12.1",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.5",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0"
   }
 }
