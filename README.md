@@ -18,6 +18,8 @@ yarn add react-stateful-context -S
 
 ### StatefulContext
 
+Wraps a React Context as a stateful component. Pass the `getInitialState` prop to initialize the component state, and use the `setContextState` consumer callback to update the component state.
+
 ```jsx
 import StatefulContext from 'react-stateful-context'
 
