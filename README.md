@@ -51,7 +51,7 @@ import StatefulContext from 'react-stateful-context'
 
 By default the default export is a shared context – if you need to create a unique context, use `createStatefulContext()`.
 
-```js
+```jsx
 import { createStatefulContext } from 'react-stateful-context'
 
 const { Context, Consumer, Provider } = createStatefulContext()
