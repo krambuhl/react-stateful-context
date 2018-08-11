@@ -1,4 +1,4 @@
-import StatefulContext from '../../dist/index.es'
+import StatefulContext from '../../dist'
 
 export default () =>
   <StatefulContext.Provider
