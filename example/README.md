@@ -7,11 +7,11 @@ An example of how to use the `react-stateful-context` component.
 ## Install
 
 ```cli
-// using npm
-npm install
-
 // using yarn
 yarn
+
+// using npm
+npm install
 ```
 
 ## Start Example

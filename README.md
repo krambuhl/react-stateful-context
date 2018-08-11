@@ -7,11 +7,11 @@ A stateful component wrapping the React Context API. Provides consumer callback 
 ## Install
 
 ```cli
-// using npm
-npm install react-stateful-context -S
-
 // using yarn
-yarn add react-stateful-context -S
+yarn add react-stateful-context
+
+// using npm
+npm install react-stateful-context --save
 ```
 
 ## Usage
