@@ -2,7 +2,7 @@ import StatefulContext from '../../dist'
 
 export default () =>
   <StatefulContext.Provider
-    getInitialState={() => ({ count: 0 })}
+    getInitialState={({ count: 0 })}
   >
     {/* Retrieve context state property */}
     <StatefulContext.Consumer>
