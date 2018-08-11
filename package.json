@@ -1,10 +1,10 @@
 {
   "name": "react-stateful-context",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stateful component wrapping the React Context API",
   "scripts": {
     "build": "rollup -c",
-    "start": "rollup -c -w",
+    "dev": "rollup -c -w",
     "prepublish": "npm run build"
   },
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   "repository": "git@github.com:krambuhl/react-stateful-context.git",
   "author": "Evan Krambuhl <thekrambuhl@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.4.2"
   },
   "devDependencies": {
