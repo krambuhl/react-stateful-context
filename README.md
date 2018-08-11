@@ -16,6 +16,8 @@ yarn add react-stateful-context -S
 
 ## Usage
 
+### StatefulContext
+
 ```jsx
 import StatefulContext from 'react-stateful-context'
 
