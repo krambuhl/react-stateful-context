@@ -72,7 +72,7 @@ class BaseInput extends React.Component {
 
   componentDidMount () {
     if (this.props.defaultValue) {
-      this.context.setContextState({ [name]: this.props.defaultValue })
+      this.context.setContextState({ inputValue: this.props.defaultValue })
     }
   }
 

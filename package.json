@@ -1,11 +1,11 @@
 {
   "name": "react-stateful-context",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Stateful component wrapping the React Context API",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
