@@ -26,9 +26,9 @@
     "babel-preset-react": "^6.24.1",
     "regenerator-runtime": "^0.12.1",
     "rollup": "^0.64.1",
+    "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.5",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0"
+    "rollup-plugin-node-resolve": "^3.3.0"
   }
 }
