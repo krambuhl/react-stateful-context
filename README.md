@@ -58,17 +58,21 @@ class BaseInput extends React.Component {
   constructor (props) {
     super(props)
 
-    this.context = this.props.context
     this.state = { value: props.defaultValue }
-    this.handleObservableChange = this.handleObservableChange.bind(this)
+    this.context = this.props.context
+
+    // update internal state when data changes elsewhere
+    this.handleObservableChange = () =>
+      this.setState({ value: this.context.inputValue })
+
+    // update context state when input is changed
+    this.handleInputChange = (ev) =>
+      this.context.setContextState({ inputValue: ev.target.value })
   }
 
-  //
   componentDidMount () {
     if (this.props.defaultValue) {
-      context.setContextState({
-        [name]: this.props.defaultValue
-      })
+      this.context.setContextState({ [name]: this.props.defaultValue })
     }
   }
 
@@ -80,20 +84,12 @@ class BaseInput extends React.Component {
     this.context.stopObservingState('inputValue', this.handleObservableChange)
   }
 
-  handleObservableChange () {
-    this.setState({ value: this.context.inputValue })
-  }
-
-  handleChange (ev) {
-    this.context.setContextState({ inputValue: ev.target.value })
-  }
-
   render () {
     return (
       <input
         type="text"
         value={this.state.value}
-        onChange={ev => this.handleChange(ev)}
+        onChange={this.handleInputChange}
       />
     )
   }
