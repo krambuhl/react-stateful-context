@@ -49,31 +49,43 @@ import StatefulContext from 'react-stateful-context'
 
 #### Observing State Changes
 
-Use `startObservingState` and `stopObservingState` to watch changes to a specific variable.
+Use `startObservingState` and `stopObservingState` to watch for changes to a specific saved value.
 
 
 ```jsx
+// Define Stateful Component
 class BaseInput extends React.Component {
   constructor (props) {
     super(props)
+
+    this.context = this.props.context
     this.state = { value: props.defaultValue }
     this.handleObservableChange = this.handleObservableChange.bind(this)
   }
 
+  //
+  componentDidMount () {
+    if (this.props.defaultValue) {
+      context.setContextState({
+        [name]: this.props.defaultValue
+      })
+    }
+  }
+
   componentWillMount () {
-    this.props.context.startObservingState('inputValue', this.handleObservableChange)
+    this.context.startObservingState('inputValue', this.handleObservableChange)
   }
 
   componentWillUnmount () {
-    this.props.context.stopObservingState('inputValue', this.handleObservableChange)
+    this.context.stopObservingState('inputValue', this.handleObservableChange)
   }
 
   handleObservableChange () {
-    this.setState({ value: this.props.context.inputValue })
+    this.setState({ value: this.context.inputValue })
   }
 
   handleChange (ev) {
-    this.props.context.setContextState({ inputValue: ev.target.value })
+    this.context.setContextState({ inputValue: ev.target.value })
   }
 
   render () {
@@ -87,19 +99,17 @@ class BaseInput extends React.Component {
   }
 }
 
+// Wrap stateful component to access to context in lifecycle callbacks
 const TextInput = () =>
   <StatefulContext.Consumer>
-    {
-      context =>
-        <BaseInput context={context} {...args} />
-    }
+    { context => <BaseInput context={context} {...args} />}
   </StatefulContext.Consumer>
 
 // Use it!
 <TextInput defaultValue="This the default value" />
-<TextInput  />
 
-{/* The 2nd Input will also get the default value after mounting */}
+{/* The 2nd Input will also get the defaultValue via context after mounting */}
+<TextInput  />
 
 ```
 
