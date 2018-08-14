@@ -15,11 +15,12 @@
   "repository": "git@github.com:krambuhl/react-stateful-context.git",
   "author": "Evan Krambuhl <thekrambuhl@gmail.com>",
   "license": "MIT",
-  "peerDependencies": {
+  "dependencies": {
     "react": "^16.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",

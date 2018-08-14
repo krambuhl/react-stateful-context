@@ -26,5 +26,8 @@ export default {
     }),
     resolve(),
     commonjs()
+  ],
+  external: [
+    'react'
   ]
 }
